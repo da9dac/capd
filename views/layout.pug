@@ -1,0 +1,82 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='/main.css')
+    link(rel='stylesheet' href='fullcalendar/main.css')
+    link(rel='stylesheet' href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+    script(type="text/javascript" src='js/roll.js')
+    script(type="text/javascript" src='js/data.js')
+    script(type="text/javascript" src='js/cal.js')
+    script(type="text/javascript" src='js/reply.js')
+    script(type="text/javascript" src='js/popup.js')
+    script(type="text/javascript" src='fullcalendar/main.js')
+    script(type="text/javascript" src='fullcalendar/locales-all.js')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU' crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous')
+    script(src='https://code.jquery.com/ui/1.13.1/jquery-ui.js')
+    script(src='https://unpkg.com/@popperjs/core@2/dist/umd/popper.js')
+    script(src='https://unpkg.com/tippy.js@6')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/bPopup/0.11.0/jquery.bpopup.min.js')
+    style.
+      .tippy-box[data-theme~='yellow'] {
+      background-color: #c4e9f8;
+      color: black;
+      }
+  body
+    .container
+      p
+      .twit
+        .head-logo
+          .logo-img
+            a(href='https://www.cku.ac.kr/sites/cku/index.do' title=`학교 홈페이지` target='_blank')
+              img(src='images/logo.png' alt='홈으로')
+      .profile-wrap
+        .profile
+          if user && user.id
+            p
+            .user-name= '안녕하세요! ' + user.name + '님'
+            p
+            a#my-profile.btn(href='/profile') 마이페이지
+            a 
+            a#logout.btn(href='/auth/logout') 로그아웃
+            if user.id == 20171151
+              a 
+              a#logout.btn(href='/admin') 관리자모드
+            p 
+          else
+            form#login-form(action='/auth/login' method='post')
+              .input-group
+                label(for='id') ID
+                input#email(type='text' name='id' placeholder='학생번호' required autofocus)
+              .input-group
+                label(for='password') PW
+                input#password(type='password' name='password' placeholder='생년월일 6자리' required)
+              if loginError
+                .error-message= loginError
+              button#login.btns(type='submit') 로그인
+      .timeline
+        .homemenu
+          .lb-widget-01
+            #lbl-1.lb-left-weather
+              iframe(type='text/html' frameborder='0' height='245' width='100%' src='https://forecast.io/embed/#lat=37.73667112006788&lon=128.87353134753627&name=학교날씨&color=cyan&font=Helvetica&units=si')
+      p
+      #slider
+        .item(onclick="window.open(`http://www.cku.ac.kr`)" style='cursor:pointer;')
+        .item(onclick="window.open(`http://www.cku.ac.kr`)" style='cursor:pointer;')
+        .item(onclick="window.open(`http://www.cku.ac.kr`)" style='cursor:pointer;')
+      .button-box
+        a(href='#' onclick='slider.prev()')
+          i.fa.fa-chevron-left
+        a(href='#' onclick='slider.next()')
+          i.fa.fa-chevron-right
+        a(href='#' onclick='slider.auto()')
+          i.fa.fa-play
+        a(href='#' onclick='slider.stop()')
+          i.fa.fa-stop
+      script(src='js/roll.js')
+      block content

@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .timeline
+    form#join-form(action='/auth/join' method='post')
+      .input-group
+        label(for='join-id') 학생번호
+        input#join-email(type='text' name='id')
+      .input-group
+        label(for='join-name') 이름
+        input#join-nick(type='text' name='name')
+      .input-group
+        label(for='join-password') 비밀번호
+        input#join-password(type='password' name='password')
+      .input-group
+        label(for='join-fk_department_name') 학과명
+        input#join-email(type='text' name='fk_department_name')
+      .input-group
+        label(for='join-fk_department_category') 학과종류
+        input#join-email(type='text' name='fk_department_category')
+      .input-group
+        label(for='join-grade') 학년
+        input#join-password(type='text' name='grade')
+      .input-group
+        label(for='join-year') 입학연도
+        input#join-email(type='text' name='year')
+      .input-group
+        label(for='join-phone') 전화번호
+        input#join-nick(type='text' name='phone')
+      .input-group
+        label(for='join-mail') 메일주소
+        input#join-password(type='text' name='mail')
+      if joinError
+        .error-message= joinError
+      button#join-btn.btn(type='submit') 저장

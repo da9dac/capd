@@ -1,0 +1,2497 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='/profile.css')
+    script(type="text/javascript" src='js/profile.js')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU' crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous')
+    script(src='https://code.jquery.com/ui/1.13.1/jquery-ui.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src='https://s.codepen.io/assets/libs/modernizr.js')
+    script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD4dgkqq4O-82uOs5IE6bLpBEqKjpkeJYE&callback=initMap&region=kr')
+    script(type="text/javascript" src='map.js')
+    script(type="text/javascript" src='btnsix.js')
+    script(type="text/javascript" src='js/profile/cal.js')
+    script(type="text/javascript" src='js/profile/ko.js')
+    script(type="text/javascript" src='js/profile/softwarecal.js')
+    script(type="text/javascript" src='js/profile/eleccal.js')
+    link(rel='stylesheet' href='js/profile/main.min.css')
+    link(rel='stylesheet' href='btn.css')
+    script(src='https://unpkg.com/@popperjs/core@2/dist/umd/popper.js')
+    script(src='https://unpkg.com/tippy.js@6')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/bPopup/0.11.0/jquery.bpopup.min.js')
+    script(type="text/javascript" src='js/profile/link.js')
+    link(rel='stylesheet' href='js/profile/link.css')
+
+  body
+    .container
+      .logo
+        a(href='https://www.cku.ac.kr/sites/cku/index.do' title=`학교 홈페이지` target='_blank')
+          img(src='images/logo.png' alt='홈으로')
+      case user.fk_department_name
+        when `소프트웨어`:  .cont.s--inactive
+                            // cont inner start
+                            .cont__inner
+                              // el start 내캘린더
+                              .el
+                                .el__overflow
+                                  .el__inner
+                                    .el__bg
+                                    .el__preview-cont
+                                      h2.el__heading 내<br>캘<br>린<br>더
+                                    .el__content
+                                      .el__text 학사일정
+                                      #calendar
+                                      #popup
+                                      .el__close-btn
+                                .el__index
+                                  .el__index-back 
+                                  .el__index-front
+                                    .el__index-overlay(data-index='1') 
+                              // el end
+                              // el start 교육과정
+                              .el
+                                .el__overflow
+                                  .el__inner
+                                    .el__bg
+                                    .el__preview-cont
+                                      h2.el__heading 교<br>육<br>과<br>정
+                                    .el__content
+                                      .el__text 소프트웨어학과 교육과정
+                                      .twrapper
+                                        .kktable
+                                          .row.header.green
+                                            .cell
+                                              | 분류
+                                            .cell
+                                              | 과목명
+                                            .cell
+                                              | 학년-학기
+                                            .cell
+                                              | 학점
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | 사제동행세미나 1
+                                            .cell(data-title='학년-학기')
+                                              | 1 - 1
+                                            .cell(data-title='학점')
+                                              | 0.5
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | 문제래결기법과 코딩
+                                            .cell(data-title='학년-학기')
+                                              | 1 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 창의적소프트웨어설계
+                                            .cell(data-title='학년-학기')
+                                              | 1 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | C프로그래밍과 실습1
+                                            .cell(data-title='학년-학기')
+                                              | 1 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | R프로그래밍과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 1 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | C프로그래밍과 실습2
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 웹프로그래밍과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | 자바프로그래밍과 실습1
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 오라클중심의 데이터베이스와 실습
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 자바프로그래밍과 실습2
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 유닉스프로그래밍과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | AI활용을 위한 머신러닝 기초
+                                            .cell(data-title='학년-학기')
+                                              | 2 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 자료구조
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 모바일프로그래밍과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 빅데이터 분석과 활용
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 사물과인터넷과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 소프트웨어 설계 및 개발
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 고급데이터베이스구축과 실무
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 정보시스템 구축
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 운영체제
+                                            .cell(data-title='학년-학기')
+                                              | 3 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | 소프트웨어 캡스톤디자인
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 프로그래밍언어응용과 컴파일러
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 데이터구현기반 알고리즘
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 응용SW기반 인공지능이론과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 데이터통신과 SW보안
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 1
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | 소프트웨어 캡스톤디자인2
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 컴퓨터보안과 실습
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공선택
+                                            .cell(data-title='과목명')
+                                              | 증강현실과 가상현실
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 전공필수
+                                            .cell(data-title='과목명')
+                                              | 무선통신과 인터넷
+                                            .cell(data-title='학년-학기')
+                                              | 4 - 2
+                                            .cell(data-title='학점')
+                                              | 3
+                                      .el__close-btn
+                                .el__index
+                                  .el__index-back 
+                                  .el__index-front
+                                    .el__index-overlay(data-index='2') 
+                              // el end
+                              // el start 내연락처
+                              .el
+                                .el__overflow
+                                  .el__inner
+                                    .el__bg
+                                    .el__preview-cont
+                                      h2.el__heading 내<br>연<br>락<br>처
+                                    .el__content
+                                      .el__text 내 연락처
+                                      .phoneswrapper
+                                        .kktable
+                                          .row.header.blue
+                                            .cell
+                                              | 분류
+                                            .cell
+                                              | 이름
+                                            .cell
+                                              | 위치
+                                            .cell
+                                              | 전화번호
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 학과사무실
+                                            .cell(data-title='이름')
+                                              | 소프트웨어학과 교학팀
+                                            .cell(data-title='위치')
+                                              | 가브리엘관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7430
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 학과사무실
+                                            .cell(data-title='이름')
+                                              | 소프트웨어학과 교학팀
+                                            .cell(data-title='위치')
+                                              | 가브리엘관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7430
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 학과사무실
+                                            .cell(data-title='이름')
+                                              | 소프트웨어학과 교학팀
+                                            .cell(data-title='위치')
+                                              | 가브리엘관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7430
+                                          .row
+                                            .cell(data-title='분류')
+                                              | 학과사무실
+                                            .cell(data-title='이름')
+                                              | 소프트웨어학과 교학팀
+                                            .cell(data-title='위치')
+                                              | 가브리엘관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7430
+                                        .kktable
+                                          .row.header.blue
+                                            .cell
+                                              | 교수명
+                                            .cell
+                                              | 위치
+                                            .cell
+                                              | 전화번호
+                                            .cell
+                                              | 이메일
+                                          .row
+                                            .cell(data-title='교수명')
+                                              | 정이나
+                                            .cell(data-title='위치')
+                                              | 공학관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7597
+                                            .cell(data-title='이메일')
+                                              | lupinus07@cku.ac.kr
+                                          .row
+                                            .cell(data-title='교수명')
+                                              | 심손권
+                                            .cell(data-title='위치')
+                                              | 공학관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7208
+                                            .cell(data-title='이메일')
+                                              | paransea@cku.ac.kr
+                                          .row
+                                            .cell(data-title='교수명')
+                                              | 장원중
+                                            .cell(data-title='위치')
+                                              | 	마리아관 502호
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7265
+                                            .cell(data-title='이메일')
+                                              | wjjang@cku.ac.kr
+                                          .row
+                                            .cell(data-title='교수명')
+                                              | 조병호
+                                            .cell(data-title='위치')
+                                              | 공학관
+                                            .cell(data-title='전화번호')
+                                              | 033-649-7567
+                                            .cell(data-title='이메일')
+                                              | bhcho@cku.ac.kr
+                                      .el__close-btn
+                                .el__index
+                                  .el__index-back 
+                                  .el__index-front
+                                    .el__index-overlay(data-index='3') 
+                              // el end
+                              // el start 스마트맵
+                              .el
+                                .el__overflow
+                                  .el__inner
+                                    .el__bg
+                                    .el__preview-cont
+                                      h2.el__heading 스<br>마<br>트<br>맵
+                                    .el__content
+                                      .el__text 스마트맵
+                                        #map
+                                      .btns_bar
+                                        select#mapList(name='mapList' onchange='mapSelector(this.value)')
+                                          option 보고 싶은 지도를 선택해주세요
+                                          option(value='1') 교내 건물 위치
+                                          option(value='2') 학교 근처 음식집 추천
+                                          option(value='3') 학교 근처 편의시설
+                                          option(value='4') 강릉 편의시설
+                                          option(value='5') 강릉 장소 추천
+                                      .el__close-btn
+                                .el__index
+                                  .el__index-back 
+                                  .el__index-front
+                                    .el__index-overlay(data-index='4') 
+                              // el end
+                              // el start 임시메뉴
+                              .el
+                                .el__overflow
+                                  .el__inner
+                                    .el__bg
+                                    .el__preview-cont
+                                      h2.el__heading 즐<br>겨<br>찾<br>기
+                                    .el__content
+                                      .el__text 즐겨찾기
+                                        ul#accordion.accordion
+                                          li
+                                            .link
+                                              i.fa.fa-database
+                                              | 대학생 커뮤니티
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(onclick="window.open('https://everytime.kr/')" title=`에브리타임`) 에브리타임
+                                              li
+                                                a(href='#') 캠퍼스픽
+                                              li
+                                                a(href='#') 관동대 인스타그램
+                                          li
+                                            .link
+                                              i.fa.fa-database
+                                              | 시험 및 자격증 정보
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-database
+                                              | 과제 / 발표
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-database
+                                              | 공부
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-database
+                                              | 도서 / 문헌
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-code
+                                              | 음악 / 영화
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-mobile
+                                              | 운동 / 게임
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-globe
+                                              | 취업
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-database
+                                              | 정보
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-code
+                                              | 준비중
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-mobile
+                                              | 준비중
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                          li
+                                            .link
+                                              i.fa.fa-globe
+                                              | 준비중
+                                              i.fa.fa-chevron-down
+                                            ul.submenu
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                              li
+                                                a(href='#') 테스트
+                                      .el__close-btn
+                                .el__index
+                                  .el__index-back 
+                                  .el__index-front
+                                    .el__index-overlay(data-index='5')
+                              // el end
+                            // cont inner end
+                            a.icon-link(onclick="location.href='/'" title=`돌아가기`)
+                              img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/back-icon.png')
+                            a.icon-link.icon-link--department(onclick="window.open('https://www.cku.ac.kr/sites/software/index.do')" title=`학과페이지`)
+                              img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-3/512/home-icon.png')
+        when `건축`:  .cont.s--inactive
+                      // cont inner start
+                      .cont__inner
+                        // el start 내캘린더
+                        .el
+                          .el__overflow
+                            .el__inner
+                              .el__bg
+                              .el__preview-cont
+                                h2.el__heading 학<br>사<br>일<br>정
+                              .el__content
+                                .el__text 학사일정
+                                  #calendar
+                                .el__close-btn
+                          .el__index
+                            .el__index-back 
+                            .el__index-front
+                              .el__index-overlay(data-index='1') 
+                        // el end
+                        // el start 교육과정
+                        .el
+                          .el__overflow
+                            .el__inner
+                              .el__bg
+                              .el__preview-cont
+                                h2.el__heading 교<br>육<br>과<br>정
+                              .el__content
+                                .el__text 건축학과 교육과정
+                                .twrapper
+                                  .kktable
+                                    .row.header.green
+                                      .cell
+                                        | 분류
+                                      .cell
+                                        | 과목명
+                                      .cell
+                                        | 학년-학기
+                                      .cell
+                                        | 학점
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축셀계기초1
+                                      .cell(data-title='학년-학기')
+                                        | 1 - 1
+                                      .cell(data-title='학점')
+                                        | 0.5
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축개론
+                                      .cell(data-title='학년-학기')
+                                        | 1 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계기초2
+                                      .cell(data-title='학년-학기')
+                                        | 1 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축조형론
+                                      .cell(data-title='학년-학기')
+                                        | 1 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계1
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 서양건축사
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축CAD
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축일반구조
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | BIM및연습
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 힌국건축사
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계2
+                                      .cell(data-title='학년-학기')
+                                        | 2 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계3
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 구조디자인
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축계획론
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계4
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축법규
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축시공학
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 환경친화건축
+                                      .cell(data-title='학년-학기')
+                                        | 3 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설비
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계5
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 환경심리및행동론
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 도시설계론
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 목조건축계획및설계
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 단지및도시계획
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축설계6
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 특수공간디자인
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 주택과커뮤니티
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축작품분석
+                                      .cell(data-title='학년-학기')
+                                        | 4 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축실무
+                                      .cell(data-title='학년-학기')
+                                        | 5 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공필수
+                                      .cell(data-title='과목명')
+                                        | 건축종합설계1
+                                      .cell(data-title='학년-학기')
+                                        | 5 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축과조경
+                                      .cell(data-title='학년-학기')
+                                        | 5 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 주거환경조사론
+                                      .cell(data-title='학년-학기')
+                                        | 5 - 1
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 건축종합설계2
+                                      .cell(data-title='학년-학기')
+                                        | 5 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 전공선택
+                                      .cell(data-title='과목명')
+                                        | 목조건축계획및설계2
+                                      .cell(data-title='학년-학기')
+                                        | 5 - 2
+                                      .cell(data-title='학점')
+                                        | 3
+                                .el__close-btn
+                          .el__index
+                            .el__index-back 
+                            .el__index-front
+                              .el__index-overlay(data-index='2') 
+                        // el end
+                        // el start 내연락처
+                        .el
+                          .el__overflow
+                            .el__inner
+                              .el__bg
+                              .el__preview-cont
+                                h2.el__heading 내<br>연<br>락<br>처
+                              .el__content
+                                .el__text 내 연락처
+                                .phoneswrapper
+                                  .kktable
+                                    .row.header.blue
+                                      .cell
+                                        | 분류
+                                      .cell
+                                        | 이름
+                                      .cell
+                                        | 위치
+                                      .cell
+                                        | 전화번호
+                                    .row
+                                      .cell(data-title='분류')
+                                        | 학과사무실
+                                      .cell(data-title='이름')
+                                        | 건축학부 교학팀
+                                      .cell(data-title='위치')
+                                        | 가브리엘관
+                                      .cell(data-title='전화번호')
+                                        | 033-649-7430
+                                  .kktable
+                                    .row.header.blue
+                                      .cell
+                                        | 교수명
+                                      .cell
+                                        | 위치
+                                      .cell
+                                        | 전화번호
+                                      .cell
+                                        | 이메일
+                                    .row
+                                      .cell(data-title='교수명')
+                                        | 고상균
+                                      .cell(data-title='위치')
+                                        | 033-649-7547
+                                      .cell(data-title='전화번호')
+                                        | 033-649-7547
+                                      .cell(data-title='이메일')
+                                        | kosk@cku.ac.kr
+                                    .row
+                                      .cell(data-title='교수명')
+                                        | 심대영
+                                      .cell(data-title='위치')
+                                        | 033-649-7518
+                                      .cell(data-title='전화번호')
+                                        | 033-649-7518
+                                      .cell(data-title='이메일')
+                                        | sdyng@cku.ac.kr
+                                    .row
+                                      .cell(data-title='교수명')
+                                        | 문정인
+                                      .cell(data-title='위치')
+                                        | 033-649-7673
+                                      .cell(data-title='전화번호')
+                                        | 033-649-7673
+                                      .cell(data-title='이메일')
+                                        | mjin@cku.ac.kr
+                                    .row
+                                      .cell(data-title='교수명')
+                                        | 이재영
+                                      .cell(data-title='위치')
+                                        | 033-649-7527
+                                      .cell(data-title='전화번호')
+                                        | 033-649-7527
+                                      .cell(data-title='이메일')
+                                        | hejaero@cku.ac.kr
+                                    .row
+                                      .cell(data-title='교수명')
+                                        | 김주민
+                                      .cell(data-title='위치')
+                                        | 033-649-7598
+                                      .cell(data-title='전화번호')
+                                        | 033-649-7598
+                                      .cell(data-title='이메일')
+                                        | joomink@cku.ac.kr
+                                .el__close-btn
+                          .el__index
+                            .el__index-back 
+                            .el__index-front
+                              .el__index-overlay(data-index='3') 
+                        // el end
+                        // el start 스마트맵
+                        .el
+                          .el__overflow
+                            .el__inner
+                              .el__bg
+                              .el__preview-cont
+                                h2.el__heading 스<br>마<br>트<br>맵
+                              .el__content
+                                .el__text 스마트맵
+                                  #map
+                                .btns_bar
+                                  select#mapList(name='mapList' onchange='mapSelector(this.value)')
+                                    option 보고 싶은 지도를 선택해주세요
+                                    option(value='1') 교내 건물 위치
+                                    option(value='2') 학교 근처 음식집 추천
+                                    option(value='3') 학교 근처 편의시설
+                                    option(value='4') 강릉 편의시설
+                                    option(value='5') 강릉 장소 추천
+                                .el__close-btn
+                          .el__index
+                            .el__index-back 
+                            .el__index-front
+                              .el__index-overlay(data-index='4') 
+                        // el end
+                        // el start 임시메뉴
+                        .el
+                          .el__overflow
+                            .el__inner
+                              .el__bg
+                              .el__preview-cont
+                                h2.el__heading 임<br>시<br>메<br>뉴
+                              .el__content
+                                .el__text 임시메뉴
+                                  .centerer
+                                    .favorite
+                                      a.btn-6(onclick="window.open('https://pixlr.com/kr/')" title=`픽슬러`)
+                                        | 픽슬러
+                                        span
+                                      a.btn-6(onclick="window.open('http://www.poporo.co.kr/')" title=`포포로`)
+                                        | 포포로
+                                        span
+                                      a.btn-6(onclick="window.open('http://www.riss.kr/index.do')" title=`RISS`)
+                                        | RISS
+                                        span
+                                      a.btn-6(onclick="window.open('https://samsungsgr.com/sgr/')" title=`삼성경제연구소`)
+                                        | 삼성경제연구소
+                                        span
+                                      a.btn-6(onclick="window.open('https://kosis.kr/index/index.do')" title=`국가통계포털`)
+                                        | 국가통계포털
+                                        span
+                                      a.btn-6(onclick="window.open('https://www.kocca.kr/kocca/main.do')" title=`한국콘텐츠진흥원`)
+                                        | 한국콘텐츠진흥원
+                                        span
+                                    .favorite
+                                      a.btn-6(onclick="window.open('https://www.gallup.co.kr/main.asp')" title=`갤럽`)
+                                        | 갤럽
+                                        span
+                                      a.btn-6(onclick="window.open('https://dart.fss.or.kr/')" title=`전자공시시스템`)
+                                        | 전자공시시스템
+                                        span
+                                      a.btn-6(onclick="window.open('http://www.openoffice.org/')" title=`오픈오피스`)
+                                        | 오픈오피스
+                                        span
+                                      a.btn-6(onclick="window.open('https://unsplash.com/')" title=`Unsplash`)
+                                        | Unsplash
+                                        span
+                                      a.btn-6(onclick="window.open('https://pixabay.com/')" title=`Pixabay`)
+                                        | Pixabay
+                                        span
+                                      a.btn-6(onclick="window.open('https://www.presentationmagazine.com/')" title=`프레젠테이션매거진`)
+                                        | 프레젠테이션매거진
+                                        span
+                                .el__close-btn
+                          .el__index
+                            .el__index-back 
+                            .el__index-front
+                              .el__index-overlay(data-index='5')
+                        // el end
+                      // cont inner end
+                      a.icon-link(onclick="location.href='/'")
+                        img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/back-icon.png')
+                      a.icon-link.icon-link--department(onclick="window.open('https://www.cku.ac.kr/sites/arch/index.do')")
+                          img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-3/512/home-icon.png')
+        when `토목공`:  .cont.s--inactive
+                        // cont inner start
+                        .cont__inner
+                          // el start 내캘린더
+                          .el
+                            .el__overflow
+                              .el__inner
+                                .el__bg
+                                .el__preview-cont
+                                  h2.el__heading 학<br>사<br>일<br>정
+                                .el__content
+                                  .el__text 학사일정
+                                    #calendar
+                                  .el__close-btn
+                            .el__index
+                              .el__index-back 
+                              .el__index-front
+                                .el__index-overlay(data-index='1') 
+                          // el end
+                          // el start 교육과정
+                          .el
+                            .el__overflow
+                              .el__inner
+                                .el__bg
+                                .el__preview-cont
+                                  h2.el__heading 교<br>육<br>과<br>정
+                                .el__content
+                                  .el__text 토목공학과 교육과정
+                                  .twrapper
+                                    .kktable
+                                      .row.header.green
+                                        .cell
+                                          | 분류
+                                        .cell
+                                          | 과목명
+                                        .cell
+                                          | 학년-학기
+                                        .cell
+                                          | 학점
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 토목직업의탐색
+                                        .cell(data-title='학년-학기')
+                                          | 1 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 공업정역학
+                                        .cell(data-title='학년-학기')
+                                          | 1 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 창의적토목설계입문
+                                        .cell(data-title='학년-학기')
+                                          | 1 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 기초응용역학
+                                        .cell(data-title='학년-학기')
+                                          | 2 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 유체역학및실험
+                                        .cell(data-title='학년-학기')
+                                          | 2 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 공학전산실무
+                                        .cell(data-title='학년-학기')
+                                          | 2 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 구조역학및실험
+                                        .cell(data-title='학년-학기')
+                                          | 2 -2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 측량학및실습
+                                        .cell(data-title='학년-학기')
+                                          | 2 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 토질역학및실험
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 지형공간정보학
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공필수
+                                        .cell(data-title='과목명')
+                                          | 철근콘크리트공학
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 관수로종합설계
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 상하수도공학및설계1
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | PS콘크리트구조설계
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 토질역학및실험
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 수문학종합설계
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 개수로종합설계
+                                        .cell(data-title='학년-학기')
+                                          | 3 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 상하수도공학및설계
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 토목종합설계1
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 강구조및합성구조설계
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 토목시공학
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 1
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 건설교재연구및지도법
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 건설교육론
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 토목종합설계2
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 전공선택
+                                        .cell(data-title='과목명')
+                                          | 해양항만및종합설계
+                                        .cell(data-title='학년-학기')
+                                          | 4 - 2
+                                        .cell(data-title='학점')
+                                          | 3
+                                  .el__close-btn
+                            .el__index
+                              .el__index-back 
+                              .el__index-front
+                                .el__index-overlay(data-index='2') 
+                          // el end
+                          // el start 내연락처
+                          .el
+                            .el__overflow
+                              .el__inner
+                                .el__bg
+                                .el__preview-cont
+                                  h2.el__heading 내<br>연<br>락<br>처
+                                .el__content
+                                  .el__text 내 연락처
+                                  .phoneswrapper
+                                    .kktable
+                                      .row.header.blue
+                                        .cell
+                                          | 분류
+                                        .cell
+                                          | 이름
+                                        .cell
+                                          | 위치
+                                        .cell
+                                          | 전화번호
+                                      .row
+                                        .cell(data-title='분류')
+                                          | 학과사무실
+                                        .cell(data-title='이름')
+                                          | 토목공학과 교학팀
+                                        .cell(data-title='위치')
+                                          | 가브리엘관
+                                        .cell(data-title='전화번호')
+                                          | 033-649-7430
+                                    .kktable
+                                      .row.header.blue
+                                        .cell
+                                          | 교수명
+                                        .cell
+                                          | 위치
+                                        .cell
+                                          | 전화번호
+                                        .cell
+                                          | 이메일
+                                      .row
+                                        .cell(data-title='교수명')
+                                          | 김규한
+                                        .cell(data-title='위치')
+                                          | 대건관 A동 209호
+                                        .cell(data-title='전화번호')
+                                          | 033-649-7511
+                                        .cell(data-title='이메일')
+                                          | khkim@cku.ac.kr
+                                      .row
+                                        .cell(data-title='교수명')
+                                          | 유승운
+                                        .cell(data-title='위치')
+                                          | 대건관 A동 208호
+                                        .cell(data-title='전화번호')
+                                          | 033-649-7513
+                                        .cell(data-title='이메일')
+                                          | swyoo@cku.ac.kr
+                                      .row
+                                        .cell(data-title='교수명')
+                                          | 박창근
+                                        .cell(data-title='위치')
+                                          | 	대건관 A동 212호
+                                        .cell(data-title='전화번호')
+                                          | 033-649-7514
+                                        .cell(data-title='이메일')
+                                          | ckpark@cku.ac.kr
+                                  .el__close-btn
+                            .el__index
+                              .el__index-back 
+                              .el__index-front
+                                .el__index-overlay(data-index='3') 
+                          // el end
+                          // el start 스마트맵
+                          .el
+                            .el__overflow
+                              .el__inner
+                                .el__bg
+                                .el__preview-cont
+                                  h2.el__heading 스<br>마<br>트<br>맵
+                                .el__content
+                                  .el__text 스마트맵
+                                    #map
+                                  .btns_bar
+                                    select#mapList(name='mapList' onchange='mapSelector(this.value)')
+                                      option 보고 싶은 지도를 선택해주세요
+                                      option(value='1') 교내 건물 위치
+                                      option(value='2') 학교 근처 음식집 추천
+                                      option(value='3') 학교 근처 편의시설
+                                      option(value='4') 강릉 편의시설
+                                      option(value='5') 강릉 장소 추천
+                                  .el__close-btn
+                            .el__index
+                              .el__index-back 
+                              .el__index-front
+                                .el__index-overlay(data-index='4') 
+                          // el end
+                          // el start 임시메뉴
+                          .el
+                            .el__overflow
+                              .el__inner
+                                .el__bg
+                                .el__preview-cont
+                                  h2.el__heading 임<br>시<br>메<br>뉴
+                                .el__content
+                                  .el__text 임시메뉴
+                                    .centerer
+                                      .favorite
+                                        a.btn-6(onclick="window.open('https://pixlr.com/kr/')" title=`픽슬러`)
+                                          | 픽슬러
+                                          span
+                                        a.btn-6(onclick="window.open('http://www.poporo.co.kr/')" title=`포포로`)
+                                          | 포포로
+                                          span
+                                        a.btn-6(onclick="window.open('http://www.riss.kr/index.do')" title=`RISS`)
+                                          | RISS
+                                          span
+                                        a.btn-6(onclick="window.open('https://samsungsgr.com/sgr/')" title=`삼성경제연구소`)
+                                          | 삼성경제연구소
+                                          span
+                                        a.btn-6(onclick="window.open('https://kosis.kr/index/index.do')" title=`국가통계포털`)
+                                          | 국가통계포털
+                                          span
+                                        a.btn-6(onclick="window.open('https://www.kocca.kr/kocca/main.do')" title=`한국콘텐츠진흥원`)
+                                          | 한국콘텐츠진흥원
+                                          span
+                                      .favorite
+                                        a.btn-6(onclick="window.open('https://www.gallup.co.kr/main.asp')" title=`갤럽`)
+                                          | 갤럽
+                                          span
+                                        a.btn-6(onclick="window.open('https://dart.fss.or.kr/')" title=`전자공시시스템`)
+                                          | 전자공시시스템
+                                          span
+                                        a.btn-6(onclick="window.open('http://www.openoffice.org/')" title=`오픈오피스`)
+                                          | 오픈오피스
+                                          span
+                                        a.btn-6(onclick="window.open('https://unsplash.com/')" title=`Unsplash`)
+                                          | Unsplash
+                                          span
+                                        a.btn-6(onclick="window.open('https://pixabay.com/')" title=`Pixabay`)
+                                          | Pixabay
+                                          span
+                                        a.btn-6(onclick="window.open('https://www.presentationmagazine.com/')" title=`프레젠테이션매거진`)
+                                          | 프레젠테이션매거진
+                                          span
+                                  .el__close-btn
+                            .el__index
+                              .el__index-back 
+                              .el__index-front
+                                .el__index-overlay(data-index='5')
+                          // el end
+                        // cont inner end
+                        a.icon-link(onclick="location.href='/'")
+                          img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/back-icon.png')
+                        a.icon-link.icon-link--department(onclick="window.open('https://www.cku.ac.kr/sites/civil/index.do')")
+                          img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-3/512/home-icon.png')
+        when `전자공`:  .cont.s--inactive
+                          // cont inner start
+                          .cont__inner
+                            // el start 내캘린더
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 학<br>사<br>일<br>정
+                                  .el__content
+                                    .el__text 학사일정
+                                      #calendar
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='1') 
+                            // el end
+                            // el start 교육과정
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 교<br>육<br>과<br>정
+                                  .el__content
+                                    .el__text 전자공학과 교육과정
+                                    .twrapper
+                                      .kktable
+                                        .row.header.green
+                                          .cell
+                                            | 분류
+                                          .cell
+                                            | 과목명
+                                          .cell
+                                            | 학년-학기
+                                          .cell
+                                            | 학점
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | 전자공학직업탐색
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | C프로그래밍
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 전자공학의설계
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 파이썬응용프로그래밍
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 기초전자실험1
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 회로이론1
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 전기자기학
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 디지털논리설계
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 기초전자실험2
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 마이크로프로세서설계
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 회로이론
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 디지털신호처리이론및설계
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | 전자공학실험1
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 전자회로이론및설계1
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 임베디드시스템설계
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | 전기전자공학실험2
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | IOT시스템설계
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 전자회로이온및설계2
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 디지털통신
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 전자종합설계1
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 이동통신
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 제어공학
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | 전자종합설계2
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | RF회로설계
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='2') 
+                            // el end
+                            // el start 내연락처
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 내<br>연<br>락<br>처
+                                  .el__content
+                                    .el__text 내 연락처
+                                    .phoneswrapper
+                                      .kktable
+                                        .row.header.blue
+                                          .cell
+                                            | 분류
+                                          .cell
+                                            | 이름
+                                          .cell
+                                            | 위치
+                                          .cell
+                                            | 전화번호
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 학과사무실
+                                          .cell(data-title='이름')
+                                            | 전자공학과 교학팀
+                                          .cell(data-title='위치')
+                                            | 가브리엘관
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7430
+                                      .kktable
+                                        .row.header.blue
+                                          .cell
+                                            | 교수명
+                                          .cell
+                                            | 위치
+                                          .cell
+                                            | 전화번호
+                                          .cell
+                                            | 이메일
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 이금원
+                                          .cell(data-title='위치')
+                                            | 마리아관 535호
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7556
+                                          .cell(data-title='이메일')
+                                            | 이메일 없음
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 김종일
+                                          .cell(data-title='위치')
+                                            | 마리아관 입학처장실
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7557
+                                          .cell(data-title='이메일')
+                                            | 이메일 없음
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 유용경
+                                          .cell(data-title='위치')
+                                            | 가브리엘 401호
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7379
+                                          .cell(data-title='이메일')
+                                            | 이메일 없음
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 송호승
+                                          .cell(data-title='위치')
+                                            | 가브리엘관 406호
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7553
+                                          .cell(data-title='이메일')
+                                            | 이메일 없음
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='3') 
+                            // el end
+                            // el start 스마트맵
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 스<br>마<br>트<br>맵
+                                  .el__content
+                                    .el__text 스마트맵
+                                      #map
+                                    .btns_bar
+                                      select#mapList(name='mapList' onchange='mapSelector(this.value)')
+                                        option 보고 싶은 지도를 선택해주세요
+                                        option(value='1') 교내 건물 위치
+                                        option(value='2') 학교 근처 음식집 추천
+                                        option(value='3') 학교 근처 편의시설
+                                        option(value='4') 강릉 편의시설
+                                        option(value='5') 강릉 장소 추천
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='4') 
+                            // el end
+                            // el start 임시메뉴
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 임<br>시<br>메<br>뉴
+                                  .el__content
+                                    .el__text 임시메뉴
+                                      .centerer
+                                        .favorite
+                                          a.btn-6(onclick="window.open('https://pixlr.com/kr/')" title=`픽슬러`)
+                                            | 픽슬러
+                                            span
+                                          a.btn-6(onclick="window.open('http://www.poporo.co.kr/')" title=`포포로`)
+                                            | 포포로
+                                            span
+                                          a.btn-6(onclick="window.open('http://www.riss.kr/index.do')" title=`RISS`)
+                                            | RISS
+                                            span
+                                          a.btn-6(onclick="window.open('https://samsungsgr.com/sgr/')" title=`삼성경제연구소`)
+                                            | 삼성경제연구소
+                                            span
+                                          a.btn-6(onclick="window.open('https://kosis.kr/index/index.do')" title=`국가통계포털`)
+                                            | 국가통계포털
+                                            span
+                                          a.btn-6(onclick="window.open('https://www.kocca.kr/kocca/main.do')" title=`한국콘텐츠진흥원`)
+                                            | 한국콘텐츠진흥원
+                                            span
+                                        .favorite
+                                          a.btn-6(onclick="window.open('https://www.gallup.co.kr/main.asp')" title=`갤럽`)
+                                            | 갤럽
+                                            span
+                                          a.btn-6(onclick="window.open('https://dart.fss.or.kr/')" title=`전자공시시스템`)
+                                            | 전자공시시스템
+                                            span
+                                          a.btn-6(onclick="window.open('http://www.openoffice.org/')" title=`오픈오피스`)
+                                            | 오픈오피스
+                                            span
+                                          a.btn-6(onclick="window.open('https://unsplash.com/')" title=`Unsplash`)
+                                            | Unsplash
+                                            span
+                                          a.btn-6(onclick="window.open('https://pixabay.com/')" title=`Pixabay`)
+                                            | Pixabay
+                                            span
+                                          a.btn-6(onclick="window.open('https://www.presentationmagazine.com/')" title=`프레젠테이션매거진`)
+                                            | 프레젠테이션매거진
+                                            span
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='5')
+                            // el end
+                          // cont inner end
+                          a.icon-link(onclick="location.href='/'")
+                            img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/back-icon.png')
+                          a.icon-link.icon-link--department(onclick="window.open('https://www.cku.ac.kr/sites/eice/index.do')")
+                            img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-3/512/home-icon.png')
+        when `건축공`:  .cont.s--inactive
+                          // cont inner start
+                          .cont__inner
+                            // el start 내캘린더
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 학<br>사<br>일<br>정
+                                  .el__content
+                                    .el__text 학사일정
+                                      #calendar
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='1') 
+                            // el end
+                            // el start 교육과정
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 교<br>육<br>과<br>정
+                                  .el__content
+                                    .el__text 건축공학과 교육과정
+                                    .twrapper
+                                      .kktable
+                                        .row.header.green
+                                          .cell
+                                            | 분류
+                                          .cell
+                                            | 과목명
+                                          .cell
+                                            | 학년-학기
+                                          .cell
+                                            | 학점
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공필수
+                                          .cell(data-title='과목명')
+                                            | 건축설계기초1
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 건축개론
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 창의적공학설계입문
+                                          .cell(data-title='학년-학기')
+                                            | 1 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | BIM및연습
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축일반구조
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축재료학
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 건축공정관리실습
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축컴퓨터프로그래밍
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축일반구조
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축일반구조
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축환경및설비
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축구조역학1
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축시공학
+                                          .cell(data-title='학년-학기')
+                                            | 2 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건설관리
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축재료실험및설계
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공선택
+                                          .cell(data-title='과목명')
+                                            | 건축구조역학2
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 리모델링공학
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축산학
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 건축구조실험캡스톤디자인
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 건축실무캡스톤디자인
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 건축품질관리
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축법규
+                                          .cell(data-title='학년-학기')
+                                            | 3 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축공학종합설계1
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 강구조공학
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 건설교과교육론
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 1
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 전산해석및실습
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공기초
+                                          .cell(data-title='과목명')
+                                            | 건축공학종합설계2
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 전공심화
+                                          .cell(data-title='과목명')
+                                            | 건설교과교재연구및지도법
+                                          .cell(data-title='학년-학기')
+                                            | 4 - 2
+                                          .cell(data-title='학점')
+                                            | 3
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='2') 
+                            // el end
+                            // el start 내연락처
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 내<br>연<br>락<br>처
+                                  .el__content
+                                    .el__text 내 연락처
+                                    .phoneswrapper
+                                      .kktable
+                                        .row.header.blue
+                                          .cell
+                                            | 분류
+                                          .cell
+                                            | 이름
+                                          .cell
+                                            | 위치
+                                          .cell
+                                            | 전화번호
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 학과사무실
+                                          .cell(data-title='이름')
+                                            | 건축공학과 교학팀
+                                          .cell(data-title='위치')
+                                            | 가브리엘관
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7430
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 학과사무실
+                                          .cell(data-title='이름')
+                                            | 건축공학과 교학팀
+                                          .cell(data-title='위치')
+                                            | 가브리엘관
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7430
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 학과사무실
+                                          .cell(data-title='이름')
+                                            | 건축공학과 교학팀
+                                          .cell(data-title='위치')
+                                            | 가브리엘관
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7430
+                                        .row
+                                          .cell(data-title='분류')
+                                            | 학과사무실
+                                          .cell(data-title='이름')
+                                            | 건축공학과 교학팀
+                                          .cell(data-title='위치')
+                                            | 가브리엘관
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7430
+                                      .kktable
+                                        .row.header.blue
+                                          .cell
+                                            | 교수명
+                                          .cell
+                                            | 위치
+                                          .cell
+                                            | 전화번호
+                                          .cell
+                                            | 이메일
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 김병윤
+                                          .cell(data-title='위치')
+                                            | 대건관 407호
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7528
+                                          .cell(data-title='이메일')
+                                            | kby@cku.ac.kr
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 이웅균
+                                          .cell(data-title='위치')
+                                            | 대건관 217호
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7548
+                                          .cell(data-title='이메일')
+                                            | uklee@cku.ac.kr
+                                        .row
+                                          .cell(data-title='교수명')
+                                            | 신진원
+                                          .cell(data-title='위치')
+                                            | 대건관 214호
+                                          .cell(data-title='전화번호')
+                                            | 033-649-7694
+                                          .cell(data-title='이메일')
+                                            | jshin@cku.ac.kr
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='3') 
+                            // el end
+                            // el start 스마트맵
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 스<br>마<br>트<br>맵
+                                  .el__content
+                                    .el__text 스마트맵
+                                      #map
+                                    .btns_bar
+                                      select#mapList(name='mapList' onchange='mapSelector(this.value)')
+                                        option 보고 싶은 지도를 선택해주세요
+                                        option(value='1') 교내 건물 위치
+                                        option(value='2') 학교 근처 음식집 추천
+                                        option(value='3') 학교 근처 편의시설
+                                        option(value='4') 강릉 편의시설
+                                        option(value='5') 강릉 장소 추천
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='4') 
+                            // el end
+                            // el start 임시메뉴
+                            .el
+                              .el__overflow
+                                .el__inner
+                                  .el__bg
+                                  .el__preview-cont
+                                    h2.el__heading 임<br>시<br>메<br>뉴
+                                  .el__content
+                                    .el__text 임시메뉴
+                                      .centerer
+                                        .favorite
+                                          a.btn-6(onclick="window.open('https://pixlr.com/kr/')" title=`픽슬러`)
+                                            | 픽슬러
+                                            span
+                                          a.btn-6(onclick="window.open('http://www.poporo.co.kr/')" title=`포포로`)
+                                            | 포포로
+                                            span
+                                          a.btn-6(onclick="window.open('http://www.riss.kr/index.do')" title=`RISS`)
+                                            | RISS
+                                            span
+                                          a.btn-6(onclick="window.open('https://samsungsgr.com/sgr/')" title=`삼성경제연구소`)
+                                            | 삼성경제연구소
+                                            span
+                                          a.btn-6(onclick="window.open('https://kosis.kr/index/index.do')" title=`국가통계포털`)
+                                            | 국가통계포털
+                                            span
+                                          a.btn-6(onclick="window.open('https://www.kocca.kr/kocca/main.do')" title=`한국콘텐츠진흥원`)
+                                            | 한국콘텐츠진흥원
+                                            span
+                                        .favorite
+                                          a.btn-6(onclick="window.open('https://www.gallup.co.kr/main.asp')" title=`갤럽`)
+                                            | 갤럽
+                                            span
+                                          a.btn-6(onclick="window.open('https://dart.fss.or.kr/')" title=`전자공시시스템`)
+                                            | 전자공시시스템
+                                            span
+                                          a.btn-6(onclick="window.open('http://www.openoffice.org/')" title=`오픈오피스`)
+                                            | 오픈오피스
+                                            span
+                                          a.btn-6(onclick="window.open('https://unsplash.com/')" title=`Unsplash`)
+                                            | Unsplash
+                                            span
+                                          a.btn-6(onclick="window.open('https://pixabay.com/')" title=`Pixabay`)
+                                            | Pixabay
+                                            span
+                                          a.btn-6(onclick="window.open('https://www.presentationmagazine.com/')" title=`프레젠테이션매거진`)
+                                            | 프레젠테이션매거진
+                                            span
+                                    .el__close-btn
+                              .el__index
+                                .el__index-back 
+                                .el__index-front
+                                  .el__index-overlay(data-index='5')
+                            // el end
+                          // cont inner end
+                          a.icon-link(onclick="location.href='/'")
+                            img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-1/512/back-icon.png')
+                          a.icon-link.icon-link--department(onclick="window.open('https://www.cku.ac.kr/sites/engineering/index.do')")
+                            img(src='https://icons.iconarchive.com/icons/custom-icon-design/mono-general-3/512/home-icon.png')
+script(src='js/profile.js')
+script(src='js/map.js')
+script(src='js/btnsix.js')
